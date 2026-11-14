@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sistema de Pacientes</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+  <aside class="side">
+    <div class="brand"><span class="logo" aria-hidden="true">+</span><div>Sistema de Pacientes<small>Cliente web del API .NET</small></div></div>
+    <nav id="nav" aria-label="Tablas"></nav>
+    <p class="api-state" id="api-state">Conectando…</p>
+  </aside>
+  <main>
+    <header class="top">
+      <h1 id="title" tabindex="-1">Inicio</h1>
+      <div class="top-actions">
+        <input id="search" type="search" placeholder="Buscar en la tabla…" aria-label="Buscar" hidden>
+        <button id="btn-new" class="btn primary" type="button" hidden>Nuevo registro</button>
+      </div>
+    </header>
+    <section id="view"></section>
+  </main>
+</div>
+
+<dialog id="dlg-form" aria-labelledby="dlg-title">
+  <form id="form" novalidate method="dialog">
+    <h2 id="dlg-title"></h2>
+    <div id="form-error" class="banner err" role="alert" hidden></div>
+    <div id="fields" class="fields"></div>
+    <div class="actions"><button class="btn" type="button" id="btn-cancel">Cancelar</button><button class="btn primary" type="submit">Guardar</button></div>
+  </form>
+</dialog>
+
+<dialog id="dlg-del" aria-labelledby="del-title">
+  <h2 id="del-title">¿Eliminar este registro?</h2>
+  <p id="del-text"></p>
+  <div class="actions"><button class="btn" id="del-no" type="button">Cancelar</button><button class="btn danger" id="del-yes" type="button">Sí, eliminar</button></div>
+</dialog>
+
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+<script src="config.js"></script>
+<script src="schema.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
